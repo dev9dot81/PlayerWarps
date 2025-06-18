@@ -12,7 +12,7 @@ public class Teleport {
     private final Player player;
     private final Location targetLocation;
     private final boolean runTimer;
-    private final int delay;
+    private int delay;
 
     private TeleportTask task;
 
@@ -22,6 +22,19 @@ public class Teleport {
 
         boolean withCooldown = !PermissionUtil.hasPermission(player, PermissionUtil.Permission.BYPASS_TELEPORT_DELAY);
         this.delay = Config.TELEPORT_DELAY.asInteger();
+
+        // Check specific delay permissions
+        if (player.hasPermission("playerwarps.delay.1")) {
+            this.delay = 1;
+        } else if (player.hasPermission("playerwarps.delay.2")) {
+            this.delay = 2;
+        } else if (player.hasPermission("playerwarps.delay.3")) {
+            this.delay = 3;
+        } else if (player.hasPermission("playerwarps.delay.4")) {
+            this.delay = 4;
+        } else if (player.hasPermission("playerwarps.delay.5")) {
+            this.delay = 5;
+        }
 
         this.runTimer = withCooldown && this.delay != 0;
     }

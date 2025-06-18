@@ -23,13 +23,13 @@ public class CreateWarpAction implements WarpAction<Void> {
 
     private static final List<Checker> checkers = new ArrayList<>();
     static {
-        if (HookManager.isHookEnabled(HookManager.getBentoBoxHook())) checkers.add(new BentoBoxIslandChecker());
+//        if (HookManager.isHookEnabled(HookManager.getBentoBoxHook())) checkers.add(new BentoBoxIslandChecker());
         if (HookManager.isHookEnabled(HookManager.getResidenceHook())) checkers.add(new ResidenceChecker());
         if (HookManager.isHookEnabled(HookManager.getWorldGuardHook())) checkers.add(new WorldGuardChecker());
-        if (HookManager.isHookEnabled(HookManager.getTerritoryHook())) checkers.add(new TerritoryChecker());
+//        if (HookManager.isHookEnabled(HookManager.getTerritoryHook())) checkers.add(new TerritoryChecker());
         if (HookManager.isHookEnabled(HookManager.getSuperiorSkyBlockHook())) checkers.add(new SuperiorSkyBlockChecker());
         if (HookManager.isHookEnabled(HookManager.getAngeschossenLands())) checkers.add(new AngeschossenLandsChecker());
-        if (HookManager.isHookEnabled(HookManager.getGriefPreventionHook())) checkers.add(new GriefPreventationChecker());
+//        if (HookManager.isHookEnabled(HookManager.getGriefPreventionHook())) checkers.add(new GriefPreventationChecker());
     }
 
     public CreateWarpAction(String name) {
@@ -119,7 +119,7 @@ public class CreateWarpAction implements WarpAction<Void> {
         BaseComponent[] msg = TextComponent.fromLegacyText(message);
         for (BaseComponent bc : msg) {
             bc.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(Lang.CLICK_TO_CONFIGURE.asColoredString())));
-            bc.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/playerwarps:pwarp manage " + name));
+            bc.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/pwarp manage " + name));
         }
 
         player.spigot().sendMessage(msg);

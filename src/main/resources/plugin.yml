@@ -38,3 +38,18 @@ permissions:
   playerwarps.settings:
     description: Allows you to setup the warp
     default: true
+  playerwarps.delay.1:
+    description: Sets teleport delay to 1 second
+    default: false
+  playerwarps.delay.2:
+    description: Sets teleport delay to 2 seconds
+    default: false
+  playerwarps.delay.3:
+    description: Sets teleport delay to 3 seconds
+    default: false
+  playerwarps.delay.4:
+    description: Sets teleport delay to 4 seconds
+    default: false
+  playerwarps.delay.5:
+    description: Sets teleport delay to 5 seconds
+    default: false
